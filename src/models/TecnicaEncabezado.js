@@ -61,13 +61,17 @@ TecnicaEncabezado.afterUpdate((datos)=>{
     const status = datos.status
     const encab = datos.id
 
-    Inventario.update(
-        {status: status},
-        {
-            where: {
-                encabId: encab
+    if(status<4){
+        Inventario.update(
+            {status: status},
+            {
+                where: {
+                    encabId: encab
+                }
             }
-        }
-    )
+        )
+    }
+
+    
  })
  
