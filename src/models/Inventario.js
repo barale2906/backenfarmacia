@@ -39,7 +39,7 @@ export const Inventario = sequelize.define("inventarios", {
     },
     status:{
         type: DataTypes.INTEGER,
-        defaultValue: 1 // 1 Proceso, 2 Activo, 3 Encabezado desaprobado, 4 Finalizado (La cantidad esta en ceros)
+        defaultValue: 1 // 1 Proceso, 2 Activo, 3 Encabezado desaprobado, 4 Finalizado (La cantidad esta en ceros), 5 Dado de baja
     }
 
 });

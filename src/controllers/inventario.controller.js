@@ -1,3 +1,4 @@
+import { Bodegas } from "../models/Bodega.js";
 import { Inventario } from "../models/Inventario.js";
 import { Productos } from "../models/Producto.js";
 
@@ -5,7 +6,7 @@ import { Productos } from "../models/Producto.js";
 export async function getInventarios(req, res) {
     try {
       const inventarios = await Inventario.findAll({
-        include:[{model:Productos}],
+        include:[{model:Productos}, {model:Bodegas}],
         //order:['prodId', 'ASC'],
         where: {
           status:2
