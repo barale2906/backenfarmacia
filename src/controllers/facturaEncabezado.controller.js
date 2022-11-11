@@ -1,10 +1,12 @@
+import { Bodegas } from "../models/Bodega.js";
 import { FacturaEncabezado } from "../models/FacturaEncabezado.js";
+import { Users } from "../models/User.js";
 
 // Obtener el total de los FacturaEncabezados
 export async function getFacturaEncabezados(req, res) {
     try {
       const facturaEncabezados = await FacturaEncabezado.findAll({
-        //atributes: ["id", "precioTotal", "observations"],
+        include:[{model:Users}, {model:Bodegas}],
       });
       res.json(facturaEncabezados);
     } catch (error) {

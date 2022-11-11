@@ -32,12 +32,16 @@ export async function createFacturaDetalle(req, res) {
 export async function getFacturaDetalle(req, res) {
     const { id } = req.params;
     try {
-      const facturaDetalle = await FacturaDetalle.findByPk(id);
+      const facturaDetalle = await FacturaDetalle.findAll({
+        where:{
+          factId:id
+        }
+      });
 
       if(!facturaDetalle)
         return res.status(404).json({message: "does not exists"});
 
-      res.json(facturaDetalle);
+      res.status(200).json(facturaDetalle);
 
 
     } catch (error) {

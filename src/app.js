@@ -3,7 +3,10 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 const app = express();
-
+//middlewares
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(cors());
 
 
 //Import Routes
@@ -30,10 +33,7 @@ import facturaDetalle from './routes/facturaDetalle.routes.js';
 
 
 
-//middlewares
-app.use(morgan('dev'));
-app.use(express.json());
-app.use(cors());
+
 
 
 //Routes
