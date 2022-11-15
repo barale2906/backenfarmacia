@@ -26,6 +26,7 @@ import tecnicadetalle from './routes/tecnicaDetalle.routes.js';
 import efectivo from './routes/efectivo.routers.js';
 import facturaEncabezado from './routes/facturaEncabezado.routes.js';
 import facturaDetalle from './routes/facturaDetalle.routes.js';
+import basicos from './routes/basicos.routes.js';
 
 
 
@@ -53,6 +54,7 @@ app.use('/api/tecnicadetalle', tecnicadetalle);
 app.use('/api/efectivo', efectivo);
 app.use('/api/facturaEncabezado', facturaEncabezado);
 app.use('/api/facturaDetalle',facturaDetalle);
+app.use('/api/basicos',basicos);
 
 
 export default app;
