@@ -24,6 +24,18 @@ export const Basicos = sequelize.define("basicos", {
         type: Sequelize.STRING,
         allowNull: false
     },
+    ciudad:{ 
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    phone:{ 
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    actividad:{ 
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     resolucion:{
         type: Sequelize.STRING,
         allowNull: true

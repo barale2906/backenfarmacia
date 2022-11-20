@@ -1,4 +1,5 @@
 //import { Inventario } from "../models/Inventario.js";
+import { FacturaDetalle } from "../models/FacturaDetalle.js";
 import { Impuestos } from "../models/Impuesto.js";
 import { ListaPrecio } from "../models/ListaPrecios.js";
 import { ListaPrecioEncabezado } from "../models/ListaPreciosEncabezado.js";
@@ -150,4 +151,27 @@ export async function getInventarioLP(req, res) {
   } catch (e) {
     return res.status(500).json({ message: e.message });
   }    
-} 
+}
+
+// Carga productos factura detalle
+export async function getDetalleFactura(req, res) {
+  try { 
+    const { fact } = req.params; 
+    const detalles = await FacturaDetalle.findAll({
+      include: [
+        {model:Productos}
+      ],      
+      where:{
+        factId:fact
+      }
+      
+      //attributes: ["id", "variable", "valor", "createdAt"],
+          
+    });
+   
+    res.status(200).json(detalles);
+    
+  } catch (e) {
+    return res.status(500).json({ message: e.message });
+  }    
+}

@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { activProducto, createProducto, getInventarioLP, getListaPrecios, getProducto, getProductos, updateProducto } from '../controllers/producto.controller.js';
+import { activProducto, createProducto, getDetalleFactura, getInventarioLP, getListaPrecios, getProducto, getProductos, updateProducto } from '../controllers/producto.controller.js';
 
 
 
@@ -16,5 +16,7 @@ const router = Router();
   router.get("/:bodega/precios", getListaPrecios); // muestra el listado de productos incluyendo el encabezado de la lista de precios
 
   router.get("/:encab/lp", getInventarioLP); // muestra los productos cargados a la lista de precios
+
+  router.get("/:fact/detalle", getDetalleFactura); // muestra los productos cargados a una factura
   
 export default router;
